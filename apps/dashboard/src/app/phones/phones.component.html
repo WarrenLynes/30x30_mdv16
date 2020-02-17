@@ -1,0 +1,21 @@
+
+
+<div class="container d-flex">
+  <div class="col-6">
+    <mdv16-list
+      [data]="phones$ | async"
+      [selected]="phone$ | async"
+      (selectPhone)="onSelectPhone($event)"
+      (deletePhone)="onDeletePhone($event)"
+    ></mdv16-list>
+  </div>
+
+  <div class="col-6">
+    <mdv16-form
+      [selected]="phone$ | async"
+      (savePhone)="savePhone($event)"
+      (deletePhone)="onDeletePhone($event)"
+      (resett)="reset()"
+    ></mdv16-form>
+  </div>
+</div>
